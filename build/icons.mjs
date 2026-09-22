@@ -14,18 +14,18 @@ const mark = (fg, accent) => Buffer.from(
    </svg>`
 );
 
-// favicon 32 — без полей, знак во всю ширину
-await sharp(mark("#16302A", "#9E2A3C"), { density: 384 })
+// favicon 32 — без полей, знак во всю ширину, под тёмную тему сайта
+await sharp(mark("#EDF4F0", "#5BE38A"), { density: 384 })
   .resize(32, 32, { fit: "contain", background: { r: 0, g: 0, b: 0, alpha: 0 } })
   .png()
   .toFile(`${OUT}/favicon-32.png`);
 
 // apple-touch 180 — на фирменной подложке с полями, иначе iOS обрежет
 await sharp({
-  create: { width: 180, height: 180, channels: 4, background: "#E7EAE6" }
+  create: { width: 180, height: 180, channels: 4, background: "#0F1A17" }
 })
   .composite([{
-    input: await sharp(mark("#16302A", "#9E2A3C"), { density: 600 })
+    input: await sharp(mark("#EDF4F0", "#5BE38A"), { density: 600 })
       .resize(116, 116, { fit: "contain", background: { r: 0, g: 0, b: 0, alpha: 0 } })
       .png().toBuffer(),
     gravity: "centre"

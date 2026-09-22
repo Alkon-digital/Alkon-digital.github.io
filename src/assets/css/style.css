@@ -318,3 +318,30 @@ li::marker{ color:var(--accent); }
   *{ transition:none !important; animation:none !important; }
   html{ scroll-behavior:auto; }
 }
+
+/* ---------- Статьи ---------- */
+.post__meta{ font-size:var(--t--1); color:var(--muted); margin:0; }
+.post__body h2{ font-size:var(--t-3); margin-top:2.5rem; }
+.post__body h2:first-child{ margin-top:0; }
+.post__body h3{ margin-top:1.75rem; }
+.post__body p,.post__body li{ max-width:68ch; }
+.post__body blockquote{
+  margin:1.75rem 0; padding:1.1rem 1.35rem;
+  border-left:3px solid var(--accent); background:var(--bg-2);
+  border-radius:0 var(--r) var(--r) 0;
+}
+.post__body blockquote p{ margin:0; color:var(--text); }
+.swap{ display:grid; gap:var(--gap); grid-template-columns:repeat(auto-fit,minmax(18rem,1fr)); margin:1.75rem 0; }
+.swap__box{ border:1px solid var(--line); border-radius:var(--r-lg); padding:1.35rem; background:var(--bg-2); }
+.swap__box--no{ border-color:rgba(255,92,114,.45); }
+.swap__box--yes{ border-color:rgba(91,227,138,.45); }
+.swap__head{ font-weight:700; font-size:var(--t--1); margin:0 0 .85rem; letter-spacing:.01em; }
+.swap__box--no .swap__head{ color:var(--loss); }
+.swap__box--yes .swap__head{ color:var(--accent); }
+.swap__box p{ margin:0 0 .7rem; font-size:var(--t--1); max-width:none; }
+.swap__box p:last-child{ margin:0; }
+
+.faq{ margin:1.75rem 0 0; padding:0; }
+.faq__item{ border-top:1px solid var(--line); padding-block:1.35rem; }
+.faq__q{ font-weight:700; font-size:var(--t-1); letter-spacing:-0.02em; margin:0 0 .5rem; color:var(--text); }
+.faq__a{ margin:0; color:var(--text-2); max-width:68ch; }

@@ -1,10 +1,25 @@
 ---
 layout: base.njk
 title: "Блог"
-description: "Статьи о маркетинге медицинских клиник — реклама медуслуг по закону, работа с отзывами, аналитика пациентопотока."
+description: "Статьи о маркетинге медицинских клиник: реклама медуслуг по закону, привлечение пациентов, работа с отзывами, аналитика пациентопотока."
+permalink: /blog/
+eleventyExcludeFromCollections: true
 ---
 <section class="section wrap">
-  <h1>Блог</h1>
-  <p class="section__lead">Пишем о том, что реально спрашивают владельцы клиник: сколько стоит сайт, что можно писать в рекламе, как считать дошедших пациентов.</p>
-  <p class="todo">Заполняется: статьи. Материалы с медицинскими утверждениями публикуются только после вычитки.</p>
+  <span class="eyebrow">Блог</span>
+  <h1>Как это работает в медицине</h1>
+  <p class="section__lead">Пишем о том, что реально спрашивают владельцы клиник: что можно писать в рекламе, сколько стоит сайт, как считать дошедших пациентов.</p>
+  {%- if collections.posts and collections.posts.length %}
+  <ul class="cards">
+    {%- for item in collections.posts | reverse %}
+    <li><a class="card" href="{{ item.url }}">
+      <span class="card__name">{{ item.data.title }}</span>
+      <p class="card__text">{{ item.data.summary }}</p>
+      <span class="card__foot"><span class="card__go">{{ item.data.reading | default("Читать") }}</span><span class="card__go">Открыть →</span></span>
+    </a></li>
+    {%- endfor %}
+  </ul>
+  {%- else %}
+  <p class="todo">Заполняется: статьи.</p>
+  {%- endif %}
 </section>

@@ -1,0 +1,72 @@
+---
+layout: base.njk
+---
+<article class="post">
+  <section class="section wrap">
+    <p class="case__kicker">{{ kicker | default("Блог") }}</p>
+    <h1>{{ title }}</h1>
+    <p class="section__lead">{{ summary }}</p>
+    <p class="post__meta">
+      {%- if updated %}Обновлено {{ updated }}{% else %}Опубликовано {{ date | dateISO }}{% endif %}
+      {%- if reading %} · {{ reading }}{% endif %}
+    </p>
+  </section>
+
+  <section class="section section--rule wrap post__body">
+    {{ content | safe }}
+  </section>
+
+  {%- if faq %}
+  <section class="section section--rule wrap">
+    <h2>Коротко о главном</h2>
+    <dl class="faq">
+      {%- for item in faq %}
+      <div class="faq__item">
+        <dt class="faq__q">{{ item.q }}</dt>
+        <dd class="faq__a">{{ item.a }}</dd>
+      </div>
+      {%- endfor %}
+    </dl>
+  </section>
+  {%- endif %}
+
+  <section class="section section--rule wrap">
+    <div class="cta">
+      <div>
+        <h2>{{ ctaTitle | default("Проверим вашу рекламу") }}</h2>
+        <p>{{ ctaText | default("Посмотрим, где клиника теряет пациентов и нет ли в текстах того, за что штрафуют. Бесплатно.") }}</p>
+      </div>
+      <a class="btn" href="/kontakty/">Обсудить задачу <span class="btn__dot">→</span></a>
+    </div>
+  </section>
+</article>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": {{ title | dump | safe }},
+  "description": {{ summary | dump | safe }},
+  "datePublished": "{{ date | dateISO }}",
+  "inLanguage": "ru-RU",
+  "publisher": { "@type": "Organization", "name": {{ site.name | dump | safe }}, "url": "{{ site.url }}" },
+  "mainEntityOfPage": "{{ page.url | absolute(site.url) }}"
+}
+</script>
+{%- if faq %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {%- for item in faq %}
+    {
+      "@type": "Question",
+      "name": {{ item.q | dump | safe }},
+      "acceptedAnswer": { "@type": "Answer", "text": {{ item.a | dump | safe }} }
+    }{% if not loop.last %},{% endif %}
+    {%- endfor %}
+  ]
+}
+</script>
+{%- endif %}
