@@ -55,6 +55,33 @@ faq:
 
 Значит, момент, когда клиенту снова нужно, известен заранее. И почти никто этим не пользуется.
 
+<figure class="fig">
+<svg viewBox="0 0 720 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Цикл возврата клиента салона красоты">
+  <g font-family="Onest, sans-serif">
+    <rect x="0" y="60" width="150" height="70" rx="12" fill="#16241F" stroke="#5BE38A"/>
+    <text x="75" y="90" text-anchor="middle" fill="#EDF4F0" font-size="14" font-weight="600">Визит</text>
+    <text x="75" y="110" text-anchor="middle" fill="#7D9990" font-size="11">клиент в кресле</text>
+    <path d="M158 95 H202" stroke="#3C554C" stroke-width="2"/><path d="M196 90 l7 5 -7 5" fill="none" stroke="#3C554C" stroke-width="2"/>
+    <rect x="210" y="60" width="150" height="70" rx="12" fill="#16241F" stroke="#3C554C"/>
+    <text x="285" y="90" text-anchor="middle" fill="#EDF4F0" font-size="14" font-weight="600">Интервал</text>
+    <text x="285" y="110" text-anchor="middle" fill="#7D9990" font-size="11">известен заранее</text>
+    <path d="M368 95 H412" stroke="#3C554C" stroke-width="2"/><path d="M406 90 l7 5 -7 5" fill="none" stroke="#3C554C" stroke-width="2"/>
+    <rect x="420" y="60" width="150" height="70" rx="12" fill="rgba(91,227,138,.12)" stroke="#5BE38A"/>
+    <text x="495" y="90" text-anchor="middle" fill="#5BE38A" font-size="14" font-weight="700">Напоминание</text>
+    <text x="495" y="110" text-anchor="middle" fill="#7D9990" font-size="11">шаг, который пропускают</text>
+    <path d="M578 95 H622" stroke="#5BE38A" stroke-width="2"/><path d="M616 90 l7 5 -7 5" fill="none" stroke="#5BE38A" stroke-width="2"/>
+    <rect x="630" y="60" width="90" height="70" rx="12" fill="#5BE38A"/>
+    <text x="675" y="90" text-anchor="middle" fill="#06241A" font-size="14" font-weight="700">Возврат</text>
+    <text x="675" y="110" text-anchor="middle" fill="#06241A" font-size="11" opacity=".75">без рекламы</text>
+    <path d="M495 140 V166 H75 V138" fill="none" stroke="#3C554C" stroke-width="2" stroke-dasharray="5 5"/>
+    <path d="M70 144 l5 -7 5 7" fill="none" stroke="#3C554C" stroke-width="2"/>
+    <text x="285" y="184" text-anchor="middle" fill="#7D9990" font-size="11">без напоминания цикл обрывается здесь — и клиент пробует соседний салон</text>
+  </g>
+</svg>
+<figcaption>Момент, когда клиенту снова нужно, известен заранее: окрашивание корней, коррекция, следующая процедура курса. Это единственный канал возврата, который не стоит рекламного бюджета.</figcaption>
+</figure>
+
+
 Минимум, который окупается:
 
 - Напоминание о визите накануне — снижает неявки

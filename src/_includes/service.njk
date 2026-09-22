@@ -1,0 +1,97 @@
+---
+layout: base.njk
+---
+<section class="section wrap svc__top">
+  <div class="svc__intro">
+    <span class="eyebrow">Услуга</span>
+    <h1>{{ h1 | default(title) }}</h1>
+    <p class="section__lead">{{ lead }}</p>
+  </div>
+
+  <aside class="svc__buy">
+    <p class="svc__price">{{ price }}<span>{{ priceUnit }}</span></p>
+    {%- if priceNote %}<p class="svc__note">{{ priceNote }}</p>{% endif %}
+    <a class="btn" href="/kontakty/">Обсудить задачу <span class="btn__dot">→</span></a>
+    <a class="btn btn--ghost" href="/tseny/">Все цены</a>
+    {%- if term %}<p class="svc__term">Срок: {{ term }}</p>{% endif %}
+  </aside>
+</section>
+
+{%- if includes %}
+<section class="section section--rule wrap">
+  <h2>Что входит</h2>
+  <ul class="grid">
+    {%- for item in includes %}
+    <li class="grid__item">
+      <h3>{{ item.name }}</h3>
+      <p>{{ item.text }}</p>
+    </li>
+    {%- endfor %}
+  </ul>
+</section>
+{%- endif %}
+
+<section class="section section--rule wrap post__body">
+  {{ content | safe }}
+</section>
+
+{%- if faq %}
+<section class="section section--rule wrap">
+  <h2>Частые вопросы</h2>
+  <dl class="faq">
+    {%- for item in faq %}
+    <div class="faq__item">
+      <dt class="faq__q">{{ item.q }}</dt>
+      <dd class="faq__a">{{ item.a }}</dd>
+    </div>
+    {%- endfor %}
+  </dl>
+</section>
+{%- endif %}
+
+{%- if related %}
+<section class="section section--rule wrap">
+  <h2>С чем это обычно идёт вместе</h2>
+  <ul class="rows">
+    {%- for item in related %}
+    <li><a class="row" href="{{ item.url }}"><span class="row__name">{{ item.name }}</span><p class="row__text">{{ item.text }}</p><span class="row__go">→</span></a></li>
+    {%- endfor %}
+  </ul>
+</section>
+{%- endif %}
+
+<section class="section section--rule wrap">
+  <div class="cta">
+    <div>
+      <h2>{{ ctaTitle | default("Начнём с разбора") }}</h2>
+      <p>{{ ctaText | default("Посмотрим, что происходит сейчас, и покажем, где теряются пациенты. Бесплатно и ни к чему не обязывает.") }}</p>
+    </div>
+    <a class="btn" href="/kontakty/">Оставить заявку <span class="btn__dot">→</span></a>
+  </div>
+</section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": {{ (h1 | default(title)) | dump | safe }},
+  "description": {{ description | dump | safe }},
+  "serviceType": {{ (h1 | default(title)) | dump | safe }},
+  "areaServed": { "@type": "Country", "name": "Россия" },
+  "provider": { "@type": "Organization", "name": {{ site.name | dump | safe }}, "url": "{{ site.url }}" },
+  "url": "{{ page.url | absolute(site.url) }}"
+}
+</script>
+{%- if faq %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {%- for item in faq %}
+    { "@type": "Question", "name": {{ item.q | dump | safe }}, "acceptedAnswer": { "@type": "Answer", "text": {{ item.a | dump | safe }} } }{% if not loop.last %},{% endif %}
+    {%- endfor %}
+  ]
+}
+</script>
+{%- endif %}

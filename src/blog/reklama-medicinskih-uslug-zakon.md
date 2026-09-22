@@ -23,6 +23,28 @@ faq:
 
 Поэтому разобраться, что можно писать, дешевле, чем потом оспаривать.
 
+<figure class="fig">
+<svg viewBox="0 0 720 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Схема: объявление пишет агентство, размещает клиника, штраф ФАС выписывает клинике">
+  <rect x="0" y="34" width="190" height="62" rx="12" fill="#16241F" stroke="#3C554C"/>
+  <text x="95" y="60" text-anchor="middle" fill="#EDF4F0" font-family="Onest, sans-serif" font-size="14" font-weight="600">Агентство</text>
+  <text x="95" y="80" text-anchor="middle" fill="#7D9990" font-family="Onest, sans-serif" font-size="12">написало объявление</text>
+  <path d="M198 65 H252" stroke="#3C554C" stroke-width="2"/>
+  <path d="M246 60 l7 5 -7 5" fill="none" stroke="#3C554C" stroke-width="2"/>
+  <rect x="260" y="34" width="190" height="62" rx="12" fill="#16241F" stroke="#5BE38A"/>
+  <text x="355" y="60" text-anchor="middle" fill="#EDF4F0" font-family="Onest, sans-serif" font-size="14" font-weight="600">Клиника</text>
+  <text x="355" y="80" text-anchor="middle" fill="#7D9990" font-family="Onest, sans-serif" font-size="12">разместила как рекламодатель</text>
+  <path d="M458 65 H512" stroke="#FF5C72" stroke-width="2"/>
+  <path d="M506 60 l7 5 -7 5" fill="none" stroke="#FF5C72" stroke-width="2"/>
+  <rect x="520" y="26" width="200" height="78" rx="12" fill="rgba(255,92,114,.12)" stroke="#FF5C72"/>
+  <text x="620" y="52" text-anchor="middle" fill="#FF5C72" font-family="Onest, sans-serif" font-size="14" font-weight="700">Штраф ФАС</text>
+  <text x="620" y="74" text-anchor="middle" fill="#FF5C72" font-family="Onest, sans-serif" font-size="17" font-weight="700">200–500 тыс. ₽</text>
+  <text x="620" y="92" text-anchor="middle" fill="#7D9990" font-family="Onest, sans-serif" font-size="11">ч. 5 ст. 14.3 КоАП РФ</text>
+  <text x="95" y="128" text-anchor="middle" fill="#7D9990" font-family="Onest, sans-serif" font-size="12">в постановлении не фигурирует</text>
+</svg>
+<figcaption>Ответственность несёт рекламодатель. Подрядчик, придумавший формулировку, в деле не участвует — поэтому проверять тексты в интересах клиники, а не агентства.</figcaption>
+</figure>
+
+
 ## Четыре запрета, которые касаются вас напрямую
 
 Требования к рекламе медицинских услуг собраны в [статье 24 закона «О рекламе»](https://www.consultant.ru/document/cons_doc_LAW_58968/8fbc3d05dbc778e17bfc1b45fb7339df525c1985/). Формально пункты 2–5 части 1 написаны про лекарственные средства, но часть 3 той же статьи распространяет их на рекламу медицинских услуг, включая методы профилактики, диагностики, лечения и реабилитации.
@@ -46,7 +68,9 @@ faq:
 | Теле- и видеореклама, кино | 5 секунд и 7% площади кадра |
 | Все остальные способы | 5% рекламной площади |
 
-Пять процентов площади — это не мелкая сноска внизу баннера. На практике именно здесь проходит граница между «предупреждение есть» и «предупреждение формально есть, но ФАС его не засчитала».
+Считается доля именно **площади**, а не высоты. На квадратном баннере 1080 на 1080 пикселей пять процентов — это полоса во всю ширину высотой около 54 пикселей, то есть вполне читаемая. А на узком горизонтальном баннере 728 на 90 те же пять процентов дают полосу всего в четыре с половиной пикселя, которую физически нельзя прочитать.
+
+Отсюда практический вывод: на мелких форматах предупреждение приходится закладывать в макет заранее, а не дописывать снизу. Именно здесь чаще всего и возникает спор с ФАС.
 
 ## Как переписать, чтобы проходило
 

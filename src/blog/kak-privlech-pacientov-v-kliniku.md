@@ -21,6 +21,38 @@ faq:
 
 Путь пациента от рекламы до приёма состоит из пяти шагов. На каждом есть утечка.
 
+<figure class="fig">
+<svg viewBox="0 0 720 330" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Пять шагов пути пациента и утечка на каждом">
+  <g font-family="Onest, sans-serif">
+    <rect x="0" y="6" width="430" height="44" rx="8" fill="#5BE38A"/>
+    <text x="16" y="34" fill="#06241A" font-size="14" font-weight="700">Увидел рекламу</text>
+    <text x="452" y="28" fill="#FF5C72" font-size="12" font-weight="600">Не то обещание</text>
+    <text x="452" y="44" fill="#7D9990" font-size="11">объявление и страница не совпали</text>
+    <rect x="0" y="62" width="350" height="44" rx="8" fill="#5BE38A" opacity=".9"/>
+    <text x="16" y="90" fill="#06241A" font-size="14" font-weight="700">Открыл сайт</text>
+    <text x="452" y="84" fill="#FF5C72" font-size="12" font-weight="600">Нет ответа и записи</text>
+    <text x="452" y="100" fill="#7D9990" font-size="11">нет цены, форма на десять полей</text>
+    <rect x="0" y="118" width="250" height="44" rx="8" fill="#5BE38A" opacity=".8"/>
+    <text x="16" y="146" fill="#06241A" font-size="14" font-weight="700">Оставил заявку</text>
+    <text x="452" y="140" fill="#FF5C72" font-size="12" font-weight="600">Перезвонили поздно</text>
+    <text x="452" y="156" fill="#7D9990" font-size="11">самая дорогая и незаметная утечка</text>
+    <rect x="0" y="174" width="175" height="44" rx="8" fill="#5BE38A" opacity=".7"/>
+    <text x="16" y="202" fill="#06241A" font-size="14" font-weight="700">Поговорил</text>
+    <text x="452" y="196" fill="#FF5C72" font-size="12" font-weight="600">Разговор рассыпался</text>
+    <text x="452" y="212" fill="#7D9990" font-size="11">не назвали цену, не предложили окно</text>
+    <rect x="0" y="230" width="115" height="44" rx="8" fill="#5BE38A" opacity=".6"/>
+    <text x="16" y="258" fill="#06241A" font-size="13" font-weight="700">Записался</text>
+    <text x="452" y="252" fill="#FF5C72" font-size="12" font-weight="600">Не пришёл</text>
+    <text x="452" y="268" fill="#7D9990" font-size="11">нет напоминания накануне</text>
+    <rect x="0" y="286" width="75" height="36" rx="8" fill="#EDF4F0"/>
+    <text x="16" y="309" fill="#06241A" font-size="13" font-weight="700">Дошёл</text>
+    <text x="95" y="309" fill="#7D9990" font-size="12">единственный шаг, который приносит деньги</text>
+  </g>
+</svg>
+<figcaption>Пропорции условные — у каждой клиники свои. Смысл в том, что клиника обычно измеряет только первый и последний шаг, а теряет на трёх средних.</figcaption>
+</figure>
+
+
 ## 1. Реклама → сайт
 
 Здесь теряются те, кому объявление обещало не то. Классика — объявление про «лечение позвоночника», ведущее на общую страницу клиники, где посетителю предлагают разобраться самому.
