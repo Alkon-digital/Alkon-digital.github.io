@@ -1,0 +1,23 @@
+---
+layout: base.njk
+title: "Кейсы"
+description: "Проекты агентства «Анамнез» — что было в клинике до работы, что сделали и что изменилось в пациентопотоке."
+permalink: /keysy/
+eleventyExcludeFromCollections: true
+---
+<section class="section wrap">
+  <h1>Кейсы</h1>
+  <p class="section__lead">Каждый кейс устроен одинаково: что болело, что нашли на разборе, что сделали, что изменилось. Цифры — из систем клиники, а не из презентации.</p>
+  {%- if collections.keysy and collections.keysy.length %}
+  <ul class="rows">
+    {%- for item in collections.keysy | reverse %}
+    <li><a class="row" href="{{ item.url }}">
+      <span class="row__name">{{ item.data.title }}</span>
+      <p class="row__text">{{ item.data.summary }}</p>
+    </a></li>
+    {%- endfor %}
+  </ul>
+  {%- else %}
+  <p class="todo">Заполняется: кейсы клиник.</p>
+  {%- endif %}
+</section>

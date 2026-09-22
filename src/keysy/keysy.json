@@ -1,0 +1,5 @@
+{
+  "layout": "case.njk",
+  "tags": "keysy",
+  "permalink": "/keysy/{{ page.fileSlug }}/"
+}

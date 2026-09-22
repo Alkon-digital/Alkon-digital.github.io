@@ -1,0 +1,53 @@
+# Сборка сайта и публикация на GitHub Pages при каждом пуше в main.
+name: Публикация сайта
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - run: npx @11ty/eleventy
+
+      - name: Проверка, что тестовый сайт закрыт от индексации
+        run: |
+          if grep -q 'Disallow: /' _site/robots.txt; then
+            echo "robots.txt закрывает сайт — всё верно для тестового контура"
+          else
+            echo "ВНИМАНИЕ: сайт открыт для индексации. Убедитесь, что это осознанное решение."
+          fi
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,36 @@
+---
+layout: base.njk
+---
+<article>
+  <section class="section wrap">
+    <p class="case__kicker">{{ industry }}{% if city %}, {{ city }}{% endif %}</p>
+    <h1>{{ title }}</h1>
+    <p class="section__lead">{{ summary }}</p>
+  </section>
+
+  {%- if figures %}
+  <section class="section section--rule wrap">
+    <h2>Что изменилось</h2>
+    <dl class="figures">
+      {%- for f in figures %}
+      <div class="figures__item">
+        <dt class="figures__label">{{ f.label }}</dt>
+        <dd class="figures__value">{{ f.was }} <span class="figures__arrow">→</span> <b>{{ f.now }}</b></dd>
+        {%- if f.note %}<dd class="figures__note">{{ f.note }}</dd>{% endif %}
+      </div>
+      {%- endfor %}
+    </dl>
+    <p class="figures__source">Источник цифр: {{ source | default("указывается по каждому кейсу") }}</p>
+  </section>
+  {%- endif %}
+
+  <section class="section section--rule wrap">
+    {{ content | safe }}
+  </section>
+
+  <section class="section section--rule wrap">
+    <h2>Похожая задача?</h2>
+    <p>Разбор первичной ситуации бесплатный. По нему обычно уже видно, где теряются пациенты.</p>
+    <p><a class="btn" href="/kontakty/">Обсудить задачу</a></p>
+  </section>
+</article>

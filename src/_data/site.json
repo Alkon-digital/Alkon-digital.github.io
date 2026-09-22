@@ -1,0 +1,21 @@
+{
+  "name": "Анамнез",
+  "legalName": "",
+  "tagline": "Сайты и пациентопоток для медицинских клиник",
+  "description": "Агентство медицинского маркетинга: разработка сайтов для клиник, SEO, реклама и продвижение в нейросетях. Челябинск, работаем по всей России.",
+  "url": "https://anamnez.pro",
+  "noindex": true,
+  "phone": "",
+  "phoneHref": "",
+  "email": "",
+  "city": "Челябинск",
+  "metrikaId": "",
+  "nav": [
+    { "title": "Услуги", "url": "/uslugi/" },
+    { "title": "Отрасли", "url": "/otrasli/" },
+    { "title": "Кейсы", "url": "/keysy/" },
+    { "title": "Цены", "url": "/tseny/" },
+    { "title": "Блог", "url": "/blog/" },
+    { "title": "Контакты", "url": "/kontakty/" }
+  ]
+}

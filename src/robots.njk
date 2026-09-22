@@ -1,0 +1,13 @@
+---
+permalink: /robots.txt
+eleventyExcludeFromCollections: true
+---
+{%- if site.noindex -%}
+User-agent: *
+Disallow: /
+{%- else -%}
+User-agent: *
+Allow: /
+
+Sitemap: {{ site.url }}/sitemap.xml
+{%- endif %}

@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ title }}{% if title %} — {{ site.name }}{% else %}{{ site.name }}{% endif %}</title>
+<meta name="description" content="{{ description | default(site.description) }}">
+{%- if site.noindex %}
+<meta name="robots" content="noindex, nofollow">
+{%- endif %}
+<link rel="canonical" href="{{ page.url | absolute(site.url) }}">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{ title | default(site.name) }}">
+<meta property="og:description" content="{{ description | default(site.description) }}">
+<meta property="og:url" content="{{ page.url | absolute(site.url) }}">
+<meta property="og:locale" content="ru_RU">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Literata:opsz,wght@7..72,400;7..72,500;7..72,600&display=swap">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/img/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<meta property="og:image" content="{{ '/assets/img/og.png' | absolute(site.url) }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<link rel="stylesheet" href="/assets/css/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "{{ site.name }}",
+  "description": "{{ site.description }}",
+  "url": "{{ site.url }}",
+  "areaServed": "RU",
+  "address": { "@type": "PostalAddress", "addressLocality": "{{ site.city }}", "addressCountry": "RU" }
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">К основному содержанию</a>
+
+<header class="top">
+  <div class="wrap top__inner">
+    <a class="brand" href="/">
+      <svg class="brand__mark" viewBox="0 0 48 48" width="30" height="30" aria-hidden="true" focusable="false"><rect x="4" y="4" width="40" height="10" fill="#16302A"/><rect x="4" y="19" width="26" height="10" fill="#16302A"/><rect x="4" y="34" width="12" height="10" fill="#9E2A3C"/></svg>
+      <span class="brand__text">
+        <span class="brand__name">Анамнез</span>
+        <span class="brand__note">медицинский маркетинг</span>
+      </span>
+    </a>
+    <nav class="nav" aria-label="Основное меню">
+      <ul>
+      {%- for item in site.nav %}
+        <li><a href="{{ item.url }}"{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.title }}</a></li>
+      {%- endfor %}
+      </ul>
+    </nav>
+    {%- if site.phone %}
+    <a class="top__phone" href="tel:{{ site.phoneHref }}">{{ site.phone }}</a>
+    {%- endif %}
+  </div>
+</header>
+
+<main id="main">
+{{ content | safe }}
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__inner">
+    <div class="foot__col">
+      <p class="foot__brand"><svg viewBox="0 0 48 48" width="26" height="26" aria-hidden="true" focusable="false" style="vertical-align:-5px;margin-right:.45rem"><rect x="4" y="4" width="40" height="10" fill="#16302A"/><rect x="4" y="19" width="26" height="10" fill="#16302A"/><rect x="4" y="34" width="12" height="10" fill="#9E2A3C"/></svg>Анамнез</p>
+      <p class="foot__line">Маркетинг для медицинских клиник.<br>{{ site.city }}, работаем по всей России.</p>
+    </div>
+    <div class="foot__col">
+      <p class="foot__head">Услуги</p>
+      <ul class="foot__list">
+        <li><a href="/uslugi/razrabotka-sajta-kliniki/">Разработка сайта клиники</a></li>
+        <li><a href="/uslugi/seo-prodvizhenie-kliniki/">Продвижение в поиске</a></li>
+        <li><a href="/uslugi/prodvizhenie-v-neyrosetyah/">Продвижение в нейросетях</a></li>
+        <li><a href="/uslugi/kontekstnaya-reklama/">Реклама медицинских услуг</a></li>
+      </ul>
+    </div>
+    <div class="foot__col">
+      <p class="foot__head">Контакты</p>
+      <ul class="foot__list">
+        {%- if site.phone %}<li><a href="tel:{{ site.phoneHref }}">{{ site.phone }}</a></li>{% endif %}
+        {%- if site.email %}<li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>{% endif %}
+        <li><a href="/kontakty/">Все контакты</a></li>
+        <li><a href="/politika/">Политика обработки данных</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap foot__legal">
+    <p>{% if site.legalName %}{{ site.legalName }}{% else %}Реквизиты юридического лица — заполняется{% endif %}</p>
+  </div>
+</footer>
+</body>
+</html>
