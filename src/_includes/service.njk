@@ -1,23 +1,31 @@
 ---
 layout: base.njk
 ---
-<section class="section wrap svc__top">
-  <div class="svc__intro">
+<section class="svc__hero"{% if cover %} style="--cover:url('{{ cover }}')"{% endif %}>
+  <div class="wrap svc__hero-in">
     <span class="eyebrow">Услуга</span>
     <h1>{{ h1 | default(title) }}</h1>
     <p class="section__lead">{{ lead }}</p>
-    {%- if cover %}
-    <img class="post__cover" src="{{ cover }}" alt="{{ coverAlt }}" width="1280" height="720" loading="eager" decoding="async">
-    {%- endif %}
-  </div>
 
-  <aside class="svc__buy">
-    <p class="svc__price">{{ price }}<span>{{ priceUnit }}</span></p>
+    <div class="svc__cta">
+      <a class="btn" href="/kontakty/">Обсудить задачу <span class="btn__dot">→</span></a>
+      <a class="btn btn--ghost" href="/tseny/">Все цены</a>
+    </div>
+
+    <dl class="svc__spec">
+      {%- if forWhom %}
+      <div class="svc__spec-i"><dt class="svc__spec-k">Кому</dt><dd class="svc__spec-v">{{ forWhom }}</dd></div>
+      {%- endif %}
+      {%- if result %}
+      <div class="svc__spec-i"><dt class="svc__spec-k">Что на выходе</dt><dd class="svc__spec-v">{{ result }}</dd></div>
+      {%- endif %}
+      {%- if term %}
+      <div class="svc__spec-i"><dt class="svc__spec-k">Срок</dt><dd class="svc__spec-v">{{ term }}</dd></div>
+      {%- endif %}
+      <div class="svc__spec-i"><dt class="svc__spec-k">Стоимость</dt><dd class="svc__spec-v svc__spec-v--price">{{ price }}<span>{{ priceUnit }}</span></dd></div>
+    </dl>
     {%- if priceNote %}<p class="svc__note">{{ priceNote }}</p>{% endif %}
-    <a class="btn" href="/kontakty/">Обсудить задачу <span class="btn__dot">→</span></a>
-    <a class="btn btn--ghost" href="/tseny/">Все цены</a>
-    {%- if term %}<p class="svc__term">Срок: {{ term }}</p>{% endif %}
-  </aside>
+  </div>
 </section>
 
 {%- if includes %}
