@@ -1,29 +1,23 @@
+{%- set steps = [
+  { label: "Увидели рекламу",  prev: 100, cur: 100 },
+  { label: "Перешли на сайт",  prev: 100, cur: 42  },
+  { label: "Оставили заявку",  prev: 42,  cur: 16  },
+  { label: "Записались",       prev: 16,  cur: 11  },
+  { label: "Дошли до приёма",  prev: 11,  cur: 7   }
+] -%}
 <section class="section section--rule">
   <div class="wrap">
     <h2>Путь пациента до кресла</h2>
     <p class="section__lead">Клиника обычно видит только два числа: сколько потратили на рекламу и сколько пришло людей. Всё, что между, — не измеряется, и именно там теряются деньги.</p>
 
-    <div class="funnel" data-funnel aria-hidden="true">
-      <div class="funnel__row" style="--prev:100; --cur:100">
-        <span class="funnel__label">Увидели рекламу</span>
+    <div class="funnel" data-funnel>
+      {%- for s in steps %}
+      <div class="funnel__row" style="--prev:{{ s.prev }}; --cur:{{ s.cur }}">
+        <span class="funnel__label">{{ s.label }}</span>
         <span class="funnel__track"><i class="funnel__kept"></i><i class="funnel__lost"></i></span>
+        <span class="funnel__val" data-funnel-val>{{ s.cur }}&nbsp;%</span>
       </div>
-      <div class="funnel__row" style="--prev:100; --cur:42">
-        <span class="funnel__label">Перешли на сайт</span>
-        <span class="funnel__track"><i class="funnel__kept"></i><i class="funnel__lost"></i></span>
-      </div>
-      <div class="funnel__row" style="--prev:42; --cur:16">
-        <span class="funnel__label">Оставили заявку</span>
-        <span class="funnel__track"><i class="funnel__kept"></i><i class="funnel__lost"></i></span>
-      </div>
-      <div class="funnel__row" style="--prev:16; --cur:11">
-        <span class="funnel__label">Записались</span>
-        <span class="funnel__track"><i class="funnel__kept"></i><i class="funnel__lost"></i></span>
-      </div>
-      <div class="funnel__row" style="--prev:11; --cur:7">
-        <span class="funnel__label">Дошли до приёма</span>
-        <span class="funnel__track"><i class="funnel__kept"></i><i class="funnel__lost"></i></span>
-      </div>
+      {%- endfor %}
     </div>
 
     <p class="funnel__key"><i class="funnel__swatch funnel__swatch--lost"></i> красным — те, кто не дошёл до следующего шага</p>

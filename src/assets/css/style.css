@@ -42,6 +42,13 @@
 *,*::before,*::after{ box-sizing:border-box; }
 html{ -webkit-text-size-adjust:100%; scroll-behavior:smooth; }
 
+/* Переходы между страницами — нативные, без единой строчки JS */
+@view-transition{ navigation:auto; }
+@media (prefers-reduced-motion:reduce){
+  html{ scroll-behavior:auto; }
+  ::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){ animation:none !important; }
+}
+
 body{
   margin:0;
   background:var(--bg);
@@ -233,18 +240,15 @@ li::marker{ color:var(--accent); }
 
 /* ---------- Схема пути пациента ---------- */
 .funnel{ margin:2.5rem 0 1.25rem; display:grid; gap:.6rem; }
-.funnel__row{ display:grid; grid-template-columns:minmax(0,12rem) minmax(0,1fr); gap:var(--gap); align-items:center; }
+.funnel__row{ display:grid; grid-template-columns:minmax(0,12rem) minmax(0,1fr) 3.5rem; gap:var(--gap); align-items:center; }
+.funnel__val{ font-size:var(--t--1); font-weight:600; color:var(--accent); text-align:right; font-variant-numeric:tabular-nums; }
 .funnel__label{ font-size:var(--t--1); color:var(--text-2); font-weight:500; }
 .funnel__track{ display:flex; height:2.6rem; background:var(--bg-2); border:1px solid var(--line); border-radius:8px; overflow:hidden; }
-.funnel__kept,.funnel__lost{ display:block; height:100%; width:0; transition:width .9s cubic-bezier(.22,.61,.36,1); }
-.funnel__kept{ background:linear-gradient(90deg, var(--accent), var(--accent-2)); }
-.funnel__lost{ background:var(--loss); opacity:.9; }
-.funnel.is-shown .funnel__kept{ width:calc(var(--cur) * 1%); }
-.funnel.is-shown .funnel__lost{ width:calc((var(--prev) - var(--cur)) * 1%); }
-.funnel.is-shown .funnel__row:nth-child(2) .funnel__kept,.funnel.is-shown .funnel__row:nth-child(2) .funnel__lost{ transition-delay:.12s; }
-.funnel.is-shown .funnel__row:nth-child(3) .funnel__kept,.funnel.is-shown .funnel__row:nth-child(3) .funnel__lost{ transition-delay:.24s; }
-.funnel.is-shown .funnel__row:nth-child(4) .funnel__kept,.funnel.is-shown .funnel__row:nth-child(4) .funnel__lost{ transition-delay:.36s; }
-.funnel.is-shown .funnel__row:nth-child(5) .funnel__kept,.funnel.is-shown .funnel__row:nth-child(5) .funnel__lost{ transition-delay:.48s; }
+/* Полосы по умолчанию на своих местах: без JS схема читается целиком.
+   Motion, если он есть, сжимает их в ноль и разворачивает пружиной. */
+.funnel__kept,.funnel__lost{ display:block; height:100%; }
+.funnel__kept{ width:calc(var(--cur) * 1%); background:linear-gradient(90deg, var(--accent), var(--accent-2)); }
+.funnel__lost{ width:calc((var(--prev) - var(--cur)) * 1%); background:var(--loss); opacity:.9; }
 .funnel__key{ font-size:var(--t--1); color:var(--text-2); display:flex; align-items:center; gap:.5rem; }
 .funnel__swatch{ width:1.1rem; height:.7rem; display:inline-block; border-radius:2px; }
 .funnel__swatch--lost{ background:var(--loss); }

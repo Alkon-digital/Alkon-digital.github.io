@@ -6,10 +6,12 @@
   "private": true,
   "scripts": {
     "dev": "eleventy --serve --port=8080",
-    "build": "eleventy"
+    "build": "eleventy",
+    "vendor:motion": "node -e \"require('fs').copyFileSync('node_modules/framer-motion/dist/dom-mini.js','src/assets/js/motion.min.js')\""
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.1.6",
+    "motion": "^13.4.2",
     "sharp": "^0.35.4"
   }
 }
