@@ -18,15 +18,15 @@
         "ready": false
       },
       {
-        "name": "Сайт для косметологии",
-        "url": "/uslugi/sajt-dlya-kosmetologii/",
+        "name": "Создание сайта косметологии",
+        "url": "/uslugi/sozdanie-sajta-kosmetologii/",
         "price": "от 90 000",
         "unit": "&#8381;",
         "ready": false
       },
       {
-        "name": "Сайт для салона красоты",
-        "url": "/uslugi/sajt-dlya-salona-krasoty/",
+        "name": "Разработка сайта салона красоты",
+        "url": "/uslugi/razrabotka-sajta-salona-krasoty/",
         "price": "от 90 000",
         "unit": "&#8381;",
         "ready": false
@@ -141,7 +141,7 @@
         "ready": false
       },
       {
-        "name": "Реклама косметологии",
+        "name": "Реклама клиники косметологии",
         "url": "/uslugi/reklama-kosmetologii/",
         "price": "от 40 000",
         "unit": "&#8381;/мес",
