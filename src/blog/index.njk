@@ -12,7 +12,10 @@ eleventyExcludeFromCollections: true
   {%- if collections.posts and collections.posts.length %}
   <ul class="cards">
     {%- for item in collections.posts | reverse %}
-    <li><a class="card" href="{{ item.url }}">
+    <li><a class="card card--cover" href="{{ item.url }}">
+      {%- if item.data.coverSm %}
+      <img class="card__img" src="{{ item.data.coverSm }}" alt="" width="640" height="360" loading="lazy" decoding="async">
+      {%- endif %}
       <span class="card__name">{{ item.data.title }}</span>
       <p class="card__text">{{ item.data.summary }}</p>
       <span class="card__foot"><span class="card__go">{{ item.data.reading | default("Читать") }}</span><span class="card__go">Открыть →</span></span>

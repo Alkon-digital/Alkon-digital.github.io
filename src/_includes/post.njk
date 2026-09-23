@@ -10,6 +10,9 @@ layout: base.njk
       {%- if updated %}Обновлено {{ updated }}{% else %}Опубликовано {{ date | dateISO }}{% endif %}
       {%- if reading %} · {{ reading }}{% endif %}
     </p>
+    {%- if cover %}
+    <img class="post__cover" src="{{ cover }}" alt="{{ coverAlt }}" width="1280" height="720" loading="eager" decoding="async">
+    {%- endif %}
   </section>
 
   <section class="section section--rule wrap post__body">
@@ -48,6 +51,9 @@ layout: base.njk
   "headline": {{ title | dump | safe }},
   "description": {{ summary | dump | safe }},
   "datePublished": "{{ date | dateISO }}",
+  {%- if cover %}
+  "image": "{{ cover | absolute(site.url) }}",
+  {%- endif %}
   "inLanguage": "ru-RU",
   "publisher": { "@type": "Organization", "name": {{ site.name | dump | safe }}, "url": "{{ site.url }}" },
   "mainEntityOfPage": "{{ page.url | absolute(site.url) }}"

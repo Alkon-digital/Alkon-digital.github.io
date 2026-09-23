@@ -377,3 +377,14 @@ li::marker{ color:var(--accent); }
 .fig svg{ display:block; width:100%; height:auto; }
 .fig figcaption{ font-size:var(--t--1); color:var(--muted); margin-top:.85rem; max-width:68ch; }
 .fig--split{ display:grid; gap:var(--gap); grid-template-columns:repeat(auto-fit,minmax(16rem,1fr)); }
+
+/* ---------- Обложки статей ---------- */
+.post__cover{
+  display:block; width:100%; height:auto; margin-top:2rem;
+  border-radius:var(--r-lg); border:1px solid var(--line);
+}
+.card--cover{ padding:0; overflow:hidden; }
+.card__img{ display:block; width:100%; height:auto; aspect-ratio:16/9; object-fit:cover; }
+.card--cover .card__name,.card--cover .card__text{ padding-inline:1.6rem; }
+.card--cover .card__name{ padding-top:1.4rem; }
+.card--cover .card__foot{ margin-inline:1.6rem; margin-bottom:1.4rem; }
