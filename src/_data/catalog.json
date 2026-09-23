@@ -1,0 +1,226 @@
+[
+  {
+    "name": "Разработка сайтов",
+    "lead": "Сайт — место, куда приходят все каналы сразу. Если здесь теряется половина обращений, увеличивать рекламу бессмысленно.",
+    "items": [
+      {
+        "name": "Создание сайта клиники",
+        "url": "/uslugi/razrabotka-sajta-kliniki/",
+        "price": "от 90 000",
+        "unit": "&#8381;",
+        "ready": true
+      },
+      {
+        "name": "Сайт для стоматологии",
+        "url": "/uslugi/sajt-dlya-stomatologii/",
+        "price": "от 90 000",
+        "unit": "&#8381;",
+        "ready": false
+      },
+      {
+        "name": "Сайт для косметологии",
+        "url": "/uslugi/sajt-dlya-kosmetologii/",
+        "price": "от 90 000",
+        "unit": "&#8381;",
+        "ready": false
+      },
+      {
+        "name": "Сайт для салона красоты",
+        "url": "/uslugi/sajt-dlya-salona-krasoty/",
+        "price": "от 90 000",
+        "unit": "&#8381;",
+        "ready": false
+      },
+      {
+        "name": "Медицинский лендинг",
+        "url": "/uslugi/medicinskij-lending/",
+        "price": "",
+        "unit": "",
+        "ready": false
+      },
+      {
+        "name": "Личный сайт врача",
+        "url": "/uslugi/lichnyj-sajt-vracha/",
+        "price": "",
+        "unit": "",
+        "ready": false
+      }
+    ]
+  },
+  {
+    "name": "Продвижение в поиске",
+    "lead": "Пациент ищет процедуру, а не клинику. Под каждую нишу — свои запросы, свои страницы и свой цикл принятия решения.",
+    "items": [
+      {
+        "name": "Продвижение медицинского сайта",
+        "url": "/uslugi/seo-prodvizhenie-kliniki/",
+        "price": "от 60 000",
+        "unit": "&#8381;/мес",
+        "ready": true
+      },
+      {
+        "name": "Продвижение стоматологии",
+        "url": "/uslugi/prodvizhenie-stomatologii/",
+        "price": "от 60 000",
+        "unit": "&#8381;/мес",
+        "ready": true
+      },
+      {
+        "name": "Продвижение косметологии",
+        "url": "/uslugi/prodvizhenie-kosmetologii/",
+        "price": "от 60 000",
+        "unit": "&#8381;/мес",
+        "ready": false
+      },
+      {
+        "name": "Продвижение пластической хирургии",
+        "url": "/uslugi/prodvizhenie-plasticheskoj-hirurgii/",
+        "price": "от 60 000",
+        "unit": "&#8381;/мес",
+        "ready": false
+      },
+      {
+        "name": "Продвижение медцентра",
+        "url": "/uslugi/prodvizhenie-medcentra/",
+        "price": "от 60 000",
+        "unit": "&#8381;/мес",
+        "ready": false
+      },
+      {
+        "name": "Продвижение салона красоты",
+        "url": "/uslugi/prodvizhenie-salona-krasoty/",
+        "price": "от 60 000",
+        "unit": "&#8381;/мес",
+        "ready": false
+      },
+      {
+        "name": "Продвижение ветклиники",
+        "url": "/uslugi/prodvizhenie-veterinarnoj-kliniki/",
+        "price": "от 60 000",
+        "unit": "&#8381;/мес",
+        "ready": false
+      },
+      {
+        "name": "Продвижение реабилитационного центра",
+        "url": "/uslugi/prodvizhenie-reabilitacionnogo-centra/",
+        "price": "от 60 000",
+        "unit": "&#8381;/мес",
+        "ready": false
+      }
+    ]
+  },
+  {
+    "name": "Продвижение в нейросетях",
+    "lead": "Пациент всё чаще спрашивает не поисковик, а нейросеть. В ответе называют две-три клиники — попасть туда отдельная работа.",
+    "items": [
+      {
+        "name": "Продвижение в нейросетях",
+        "url": "/uslugi/prodvizhenie-v-neyrosetyah/",
+        "price": "от 35 000",
+        "unit": "&#8381;/мес",
+        "ready": true
+      }
+    ]
+  },
+  {
+    "name": "Реклама",
+    "lead": "Обращения с первого дня — в рамках 38-ФЗ и 323-ФЗ, без обещаний результата лечения.",
+    "items": [
+      {
+        "name": "Реклама медицинских услуг",
+        "url": "/uslugi/kontekstnaya-reklama/",
+        "price": "от 40 000",
+        "unit": "&#8381;/мес",
+        "ready": true
+      },
+      {
+        "name": "Реклама стоматологии",
+        "url": "/uslugi/reklama-stomatologii/",
+        "price": "от 40 000",
+        "unit": "&#8381;/мес",
+        "ready": false
+      },
+      {
+        "name": "Реклама косметологии",
+        "url": "/uslugi/reklama-kosmetologii/",
+        "price": "от 40 000",
+        "unit": "&#8381;/мес",
+        "ready": false
+      },
+      {
+        "name": "Реклама салона красоты",
+        "url": "/uslugi/reklama-salona-krasoty/",
+        "price": "от 40 000",
+        "unit": "&#8381;/мес",
+        "ready": false
+      }
+    ]
+  },
+  {
+    "name": "Репутация",
+    "lead": "Перед дорогим лечением пациент читает отзывы месяцами и находит всё, включая старые. Это отдельный участок работы.",
+    "items": [
+      {
+        "name": "Репутационный аудит",
+        "url": "/uslugi/reputacionnyj-audit/",
+        "price": "",
+        "unit": "",
+        "ready": false
+      },
+      {
+        "name": "Работа с отзывами",
+        "url": "/uslugi/rabota-s-otzyvami/",
+        "price": "",
+        "unit": "",
+        "ready": false
+      },
+      {
+        "name": "Продвижение врачей на ПроДокторов",
+        "url": "/uslugi/prodvizhenie-vrachej-na-prodoctorov/",
+        "price": "",
+        "unit": "",
+        "ready": false
+      }
+    ]
+  },
+  {
+    "name": "Контент",
+    "lead": "Тексты о здоровье поисковики проверяют строже. Нужны автор с квалификацией, проверяемые факты и ссылки на источники.",
+    "items": [
+      {
+        "name": "Медицинский копирайтинг",
+        "url": "/uslugi/medicinskij-kopirajting/",
+        "price": "",
+        "unit": "",
+        "ready": false
+      },
+      {
+        "name": "Наполнение сайта клиники",
+        "url": "/uslugi/napolnenie-sajta-kliniki/",
+        "price": "",
+        "unit": "",
+        "ready": false
+      }
+    ]
+  },
+  {
+    "name": "Аналитика и учёт",
+    "lead": "Без этого любой отчёт по рекламе — про клики, а не про деньги клиники.",
+    "items": [
+      {
+        "name": "Аналитика пациентопотока",
+        "url": "/uslugi/analitika/",
+        "price": "от 15 000",
+        "unit": "&#8381;/мес",
+        "ready": true
+      },
+      {
+        "name": "Внедрение CRM в клинику",
+        "url": "/uslugi/vnedrenie-crm-v-kliniku/",
+        "price": "",
+        "unit": "",
+        "ready": false
+      }
+    ]
+  }
+]

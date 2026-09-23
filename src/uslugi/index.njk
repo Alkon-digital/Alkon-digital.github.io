@@ -1,7 +1,7 @@
 ---
 layout: base.njk
 title: "Услуги"
-description: "Услуги агентства «Анамнез» для медицинских клиник — разработка сайта, продвижение в поиске и нейросетях, реклама медуслуг, аналитика пациентопотока."
+description: "Услуги агентства «Анамнез» для медицинских клиник — разработка сайтов, продвижение в поиске и нейросетях, реклама медуслуг, репутация, контент, аналитика."
 ---
 <section class="phero phero--plain">
   <div class="wrap phero__in">
@@ -16,52 +16,26 @@ description: "Услуги агентства «Анамнез» для меди
   </div>
 </section>
 
+{%- for cat in catalog %}
 <section class="section section--rule wrap">
-  <h2>Привлечение пациентов</h2>
-  <p class="section__lead">Три разных способа оказаться там, где пациент вас ищет. Обычно работают вместе: реклама даёт обращения сразу, поиск набирает поток на перспективу.</p>
-  <ul class="cards">
-    <li><a class="card" href="/uslugi/seo-prodvizhenie-kliniki/">
-      <span class="card__name">Продвижение в поиске</span>
-      <p class="card__text">Пациент ищет услугу, а не клинику. Делаем так, чтобы на этот запрос находили вас.</p>
-      <span class="card__foot"><span class="card__price">от 60 000 <span>&#8381;/мес</span></span><span class="card__go">Подробнее &#8594;</span></span>
+  <h2>{{ cat.name }}</h2>
+  <p class="section__lead">{{ cat.lead }}</p>
+  <ul class="cat">
+    {%- for item in cat.items %}
+    <li><a class="cat__i" href="{{ item.url }}">
+      <span class="cat__n">{{ item.name }}</span>
+      {%- if item.price %}<span class="cat__p">{{ item.price | safe }} {{ item.unit | safe }}</span>{% endif %}
     </a></li>
-
-    <li><a class="card" href="/uslugi/prodvizhenie-v-neyrosetyah/">
-      <span class="card__name">Продвижение в нейросетях</span>
-      <p class="card__text">Чтобы Алиса, ChatGPT и Поиск с Нейро называли вашу клинику в ответе пациенту.</p>
-      <span class="card__foot"><span class="card__price">от 35 000 <span>&#8381;/мес</span></span><span class="card__go">Подробнее &#8594;</span></span>
-    </a></li>
-
-    <li><a class="card" href="/uslugi/kontekstnaya-reklama/">
-      <span class="card__name">Реклама медицинских услуг</span>
-      <p class="card__text">В рамках 38-ФЗ и 323-ФЗ, без обещаний результата лечения и без штрафов.</p>
-      <span class="card__foot"><span class="card__price">от 40 000 <span>&#8381;/мес</span></span><span class="card__go">Подробнее &#8594;</span></span>
-    </a></li>
+    {%- endfor %}
   </ul>
 </section>
-
-<section class="section section--rule wrap">
-  <h2>Фундамент</h2>
-  <p class="section__lead">То, без чего привлечение не окупается: место, куда приходят все каналы, и способ понять, что из этого работает.</p>
-  <ul class="cards cards--fill">
-    <li><a class="card" href="/uslugi/razrabotka-sajta-kliniki/">
-      <span class="card__name">Создание сайта клиники</span>
-      <p class="card__text">Структура под услуги, страницы врачей, запись на приём и формулировки в рамках закона.</p>
-      <span class="card__foot"><span class="card__price">от 90 000 <span>&#8381;</span></span><span class="card__go">Подробнее &#8594;</span></span>
-    </a></li>
-
-    <li><a class="card" href="/uslugi/analitika/">
-      <span class="card__name">Аналитика пациентопотока</span>
-      <p class="card__text">Видно, из какого канала пришёл пациент, который дошёл до приёма, и сколько он стоил.</p>
-      <span class="card__foot"><span class="card__price">от 15 000 <span>&#8381;/мес</span></span><span class="card__go">Подробнее &#8594;</span></span>
-    </a></li>
-  </ul>
-</section>
+{%- endfor %}
 
 <section class="section section--rule wrap">
   <h2>По вашей нише</h2>
   <p class="section__lead">У каждого направления своя логика выбора и свои ограничения в рекламе. Что меняется в работе — на отдельных страницах.</p>
   <ul class="rows">
+    <li><a class="row" href="/otrasli/stomatologiya/"><span class="row__name">Стоматология</span><p class="row__text">Два разных пациента: острая боль и плановая имплантация.</p><span class="row__go">&#8594;</span></a></li>
     <li><a class="row" href="/otrasli/kosmetologiya/"><span class="row__name">Косметология</span><p class="row__text">Длинный цикл решения и жёсткие ограничения на «до и после».</p><span class="row__go">&#8594;</span></a></li>
     <li><a class="row" href="/otrasli/salony-krasoty/"><span class="row__name">Салоны красоты</span><p class="row__text">Решают быстро, уходят легко. Выигрывает тот, к кому возвращаются.</p><span class="row__go">&#8594;</span></a></li>
     <li><a class="row" href="/otrasli/medcentry/"><span class="row__name">Медцентры и частные клиники</span><p class="row__text">Десятки направлений, конкурирующих за один бюджет.</p><span class="row__go">&#8594;</span></a></li>

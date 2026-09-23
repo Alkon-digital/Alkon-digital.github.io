@@ -1,7 +1,7 @@
 ---
 layout: base.njk
 ---
-<section class="phero"{% if cover %} style="--cover:url('{{ cover }}')"{% endif %}>
+<section class="phero{% if not cover %} phero--plain{% endif %}"{% if cover %} style="--cover:url('{{ cover }}')"{% endif %}>
   <div class="wrap phero__in">
     <ol class="crumbs"><li><a href="/">Главная</a></li><li><a href="/otrasli/">Отрасли</a></li><li>{{ h1 | default(title) }}</li></ol>
     <span class="eyebrow">Отрасль</span>
