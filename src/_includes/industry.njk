@@ -1,0 +1,66 @@
+---
+layout: base.njk
+---
+<section class="phero"{% if cover %} style="--cover:url('{{ cover }}')"{% endif %}>
+  <div class="wrap phero__in">
+    <ol class="crumbs"><li><a href="/">Главная</a></li><li><a href="/otrasli/">Отрасли</a></li><li>{{ h1 | default(title) }}</li></ol>
+    <span class="eyebrow">Отрасль</span>
+    <h1>{{ h1 | default(title) }}</h1>
+    <p class="section__lead">{{ lead }}</p>
+
+    <div class="phero__cta">
+      <a class="btn" href="/kontakty/">Обсудить задачу <span class="btn__dot">→</span></a>
+      <a class="btn btn--ghost" href="/tseny/">Все цены</a>
+    </div>
+
+    <dl class="phero__spec phero__spec--3">
+      {%- if forWhom %}
+      <div class="phero__spec-i"><dt class="phero__spec-k">Кому</dt><dd class="phero__spec-v">{{ forWhom }}</dd></div>
+      {%- endif %}
+      {%- if hard %}
+      <div class="phero__spec-i"><dt class="phero__spec-k">Главная сложность</dt><dd class="phero__spec-v">{{ hard }}</dd></div>
+      {%- endif %}
+      {%- if doing %}
+      <div class="phero__spec-i"><dt class="phero__spec-k">Что делаем</dt><dd class="phero__spec-v">{{ doing }}</dd></div>
+      {%- endif %}
+    </dl>
+    <p class="phero__note">Первичный разбор бесплатный, занимает 2–3 дня.</p>
+  </div>
+</section>
+
+<section class="section section--rule wrap post__body">
+  {{ content | safe }}
+</section>
+
+{%- if services %}
+<section class="section section--rule wrap">
+  <h2>Что обычно нужно в этой нише</h2>
+  <ul class="rows">
+    {%- for item in services %}
+    <li><a class="row" href="{{ item.url }}"><span class="row__name">{{ item.name }}</span><p class="row__text">{{ item.text }}</p><span class="row__go">→</span></a></li>
+    {%- endfor %}
+  </ul>
+</section>
+{%- endif %}
+
+<section class="section section--rule wrap">
+  <div class="cta">
+    <div>
+      <h2>{{ ctaTitle | default("Начнём с разбора") }}</h2>
+      <p>{{ ctaText | default("Посмотрим, что происходит сейчас, и покажем, где теряются пациенты. Бесплатно и ни к чему не обязывает.") }}</p>
+    </div>
+    <a class="btn" href="/kontakty/">Оставить заявку <span class="btn__dot">→</span></a>
+  </div>
+</section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Главная", "item": "{{ site.url }}/" },
+    { "@type": "ListItem", "position": 2, "name": "Отрасли", "item": "{{ site.url }}/otrasli/" },
+    { "@type": "ListItem", "position": 3, "name": {{ (h1 | default(title)) | dump | safe }}, "item": "{{ page.url | absolute(site.url) }}" }
+  ]
+}
+</script>

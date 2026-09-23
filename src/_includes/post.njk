@@ -2,17 +2,17 @@
 layout: base.njk
 ---
 <article class="post">
-  <section class="section wrap">
-    <p class="case__kicker">{{ kicker | default("Блог") }}</p>
-    <h1>{{ title }}</h1>
-    <p class="section__lead">{{ summary }}</p>
-    <p class="post__meta">
-      {%- if updated %}Обновлено {{ updated }}{% else %}Опубликовано {{ date | dateISO }}{% endif %}
-      {%- if reading %} · {{ reading }}{% endif %}
-    </p>
-    {%- if cover %}
-    <img class="post__cover" src="{{ cover }}" alt="{{ coverAlt }}" width="1280" height="720" loading="eager" decoding="async">
-    {%- endif %}
+  <section class="phero"{% if cover %} style="--cover:url('{{ cover }}')"{% endif %}>
+    <div class="wrap phero__in">
+      <ol class="crumbs"><li><a href="/">Главная</a></li><li><a href="/blog/">Блог</a></li><li>{{ title }}</li></ol>
+      <span class="eyebrow">{{ kicker | default("Блог") }}</span>
+      <h1>{{ title }}</h1>
+      <p class="section__lead">{{ summary }}</p>
+      <p class="post__meta">
+        {%- if updated %}Обновлено {{ updated }}{% else %}Опубликовано {{ date | dateISO }}{% endif %}
+        {%- if reading %} · {{ reading }}{% endif %}
+      </p>
+    </div>
   </section>
 
   <section class="section section--rule wrap post__body">
@@ -44,6 +44,17 @@ layout: base.njk
   </section>
 </article>
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Главная", "item": "{{ site.url }}/" },
+    { "@type": "ListItem", "position": 2, "name": "Блог", "item": "{{ site.url }}/blog/" },
+    { "@type": "ListItem", "position": 3, "name": {{ title | dump | safe }}, "item": "{{ page.url | absolute(site.url) }}" }
+  ]
+}
+</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",

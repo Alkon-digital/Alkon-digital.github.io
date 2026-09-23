@@ -5,10 +5,16 @@ description: "Статьи о маркетинге медицинских кли
 permalink: /blog/
 eleventyExcludeFromCollections: true
 ---
-<section class="section wrap">
-  <span class="eyebrow">Блог</span>
-  <h1>Как это работает в медицине</h1>
-  <p class="section__lead">Пишем о том, что реально спрашивают владельцы клиник: что можно писать в рекламе, сколько стоит сайт, как считать дошедших пациентов.</p>
+<section class="phero phero--plain">
+  <div class="wrap phero__in">
+    <ol class="crumbs"><li><a href="/">Главная</a></li><li>Блог</li></ol>
+    <span class="eyebrow">Блог</span>
+    <h1>Как это работает в медицине</h1>
+    <p class="section__lead">Пишем о том, что реально спрашивают владельцы клиник: что можно писать в рекламе, сколько стоит сайт, как считать дошедших пациентов.</p>
+  </div>
+</section>
+
+<section class="section section--rule wrap">
   {%- if collections.posts and collections.posts.length %}
   <ul class="cards">
     {%- for item in collections.posts | reverse %}

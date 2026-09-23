@@ -1,30 +1,31 @@
 ---
 layout: base.njk
 ---
-<section class="svc__hero"{% if cover %} style="--cover:url('{{ cover }}')"{% endif %}>
-  <div class="wrap svc__hero-in">
+<section class="phero"{% if cover %} style="--cover:url('{{ cover }}')"{% endif %}>
+  <div class="wrap phero__in">
+    <ol class="crumbs"><li><a href="/">Главная</a></li><li><a href="/uslugi/">Услуги</a></li><li>{{ h1 | default(title) }}</li></ol>
     <span class="eyebrow">Услуга</span>
     <h1>{{ h1 | default(title) }}</h1>
     <p class="section__lead">{{ lead }}</p>
 
-    <div class="svc__cta">
+    <div class="phero__cta">
       <a class="btn" href="/kontakty/">Обсудить задачу <span class="btn__dot">→</span></a>
       <a class="btn btn--ghost" href="/tseny/">Все цены</a>
     </div>
 
-    <dl class="svc__spec">
+    <dl class="phero__spec">
       {%- if forWhom %}
-      <div class="svc__spec-i"><dt class="svc__spec-k">Кому</dt><dd class="svc__spec-v">{{ forWhom }}</dd></div>
+      <div class="phero__spec-i"><dt class="phero__spec-k">Кому</dt><dd class="phero__spec-v">{{ forWhom }}</dd></div>
       {%- endif %}
       {%- if result %}
-      <div class="svc__spec-i"><dt class="svc__spec-k">Что на выходе</dt><dd class="svc__spec-v">{{ result }}</dd></div>
+      <div class="phero__spec-i"><dt class="phero__spec-k">Что на выходе</dt><dd class="phero__spec-v">{{ result }}</dd></div>
       {%- endif %}
       {%- if term %}
-      <div class="svc__spec-i"><dt class="svc__spec-k">Срок</dt><dd class="svc__spec-v">{{ term }}</dd></div>
+      <div class="phero__spec-i"><dt class="phero__spec-k">Срок</dt><dd class="phero__spec-v">{{ term }}</dd></div>
       {%- endif %}
-      <div class="svc__spec-i"><dt class="svc__spec-k">Стоимость</dt><dd class="svc__spec-v svc__spec-v--price">{{ price }}<span>{{ priceUnit }}</span></dd></div>
+      <div class="phero__spec-i"><dt class="phero__spec-k">Стоимость</dt><dd class="phero__spec-v phero__spec-v--price">{{ price }}<span>{{ priceUnit }}</span></dd></div>
     </dl>
-    {%- if priceNote %}<p class="svc__note">{{ priceNote }}</p>{% endif %}
+    {%- if priceNote %}<p class="phero__note">{{ priceNote }}</p>{% endif %}
   </div>
 </section>
 
@@ -81,6 +82,17 @@ layout: base.njk
   </div>
 </section>
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Главная", "item": "{{ site.url }}/" },
+    { "@type": "ListItem", "position": 2, "name": "Услуги", "item": "{{ site.url }}/uslugi/" },
+    { "@type": "ListItem", "position": 3, "name": {{ (h1 | default(title)) | dump | safe }}, "item": "{{ page.url | absolute(site.url) }}" }
+  ]
+}
+</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",

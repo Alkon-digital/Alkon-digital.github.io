@@ -2,10 +2,13 @@
 layout: base.njk
 ---
 <article>
-  <section class="section wrap">
-    <p class="case__kicker">{{ industry }}{% if city %}, {{ city }}{% endif %}</p>
-    <h1>{{ title }}</h1>
-    <p class="section__lead">{{ summary }}</p>
+  <section class="phero phero--plain">
+    <div class="wrap phero__in">
+      <ol class="crumbs"><li><a href="/">Главная</a></li><li><a href="/keysy/">Кейсы</a></li><li>{{ title }}</li></ol>
+      <span class="eyebrow">{{ industry }}{% if city %}, {{ city }}{% endif %}</span>
+      <h1>{{ title }}</h1>
+      <p class="section__lead">{{ summary }}</p>
+    </div>
   </section>
 
   {%- if figures %}

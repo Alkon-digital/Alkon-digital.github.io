@@ -5,9 +5,16 @@ description: "Проекты агентства «Анамнез» — что б
 permalink: /keysy/
 eleventyExcludeFromCollections: true
 ---
-<section class="section wrap">
-  <h1>Кейсы</h1>
-  <p class="section__lead">Каждый кейс устроен одинаково: что болело, что нашли на разборе, что сделали, что изменилось. Цифры — из систем клиники, а не из презентации.</p>
+<section class="phero phero--plain">
+  <div class="wrap phero__in">
+    <ol class="crumbs"><li><a href="/">Главная</a></li><li>Кейсы</li></ol>
+    <span class="eyebrow">Кейсы</span>
+    <h1>Кейсы</h1>
+    <p class="section__lead">Каждый кейс устроен одинаково: что болело, что нашли на разборе, что сделали, что изменилось. Цифры — из систем клиники, а не из презентации.</p>
+  </div>
+</section>
+
+<section class="section section--rule wrap">
   {%- if collections.keysy and collections.keysy.length %}
   <ul class="rows">
     {%- for item in collections.keysy | reverse %}
