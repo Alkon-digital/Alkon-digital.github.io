@@ -2,14 +2,14 @@
 layout: base.njk
 ---
 <article class="post">
-  <section class="phero"{% if cover %} style="--cover:url('{{ cover }}')"{% endif %}>
+  <section class="phero{% if not cover %} phero--plain{% endif %}"{% if cover %} style="--cover:url('{{ cover }}')"{% endif %}>
     <div class="wrap phero__in">
       <ol class="crumbs"><li><a href="/">Главная</a></li><li><a href="/blog/">Блог</a></li><li>{{ title }}</li></ol>
       <span class="eyebrow">{{ kicker | default("Блог") }}</span>
       <h1>{{ title }}</h1>
       <p class="section__lead">{{ summary }}</p>
       <p class="post__meta">
-        {%- if updated %}Обновлено {{ updated }}{% else %}Опубликовано {{ date | dateISO }}{% endif %}
+        {%- if updated %}Обновлено {{ updated }}{% else %}Опубликовано <time datetime="{{ date | dateISO }}">{{ date | dateRu }}</time>{% endif %}
         {%- if reading %} · {{ reading }}{% endif %}
       </p>
     </div>
