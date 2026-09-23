@@ -6,6 +6,9 @@ layout: base.njk
     <span class="eyebrow">Услуга</span>
     <h1>{{ h1 | default(title) }}</h1>
     <p class="section__lead">{{ lead }}</p>
+    {%- if cover %}
+    <img class="post__cover" src="{{ cover }}" alt="{{ coverAlt }}" width="1280" height="720" loading="eager" decoding="async">
+    {%- endif %}
   </div>
 
   <aside class="svc__buy">
