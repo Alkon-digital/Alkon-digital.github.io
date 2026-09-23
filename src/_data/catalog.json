@@ -11,8 +11,8 @@
         "ready": true
       },
       {
-        "name": "Сайт для стоматологии",
-        "url": "/uslugi/sajt-dlya-stomatologii/",
+        "name": "Разработка сайта стоматологии",
+        "url": "/uslugi/razrabotka-sajta-stomatologii/",
         "price": "от 90 000",
         "unit": "&#8381;",
         "ready": false
@@ -134,7 +134,7 @@
         "ready": true
       },
       {
-        "name": "Реклама стоматологии",
+        "name": "Реклама стоматологической клиники",
         "url": "/uslugi/reklama-stomatologii/",
         "price": "от 40 000",
         "unit": "&#8381;/мес",
@@ -193,13 +193,6 @@
         "price": "",
         "unit": "",
         "ready": false
-      },
-      {
-        "name": "Наполнение сайта клиники",
-        "url": "/uslugi/napolnenie-sajta-kliniki/",
-        "price": "",
-        "unit": "",
-        "ready": false
       }
     ]
   },
@@ -215,8 +208,8 @@
         "ready": true
       },
       {
-        "name": "Внедрение CRM в клинику",
-        "url": "/uslugi/vnedrenie-crm-v-kliniku/",
+        "name": "CRM для клиники",
+        "url": "/uslugi/crm-dlya-kliniki/",
         "price": "",
         "unit": "",
         "ready": false
