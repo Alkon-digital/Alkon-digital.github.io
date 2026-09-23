@@ -343,10 +343,43 @@ li::marker{ color:var(--accent); }
 .swap__box p{ margin:0 0 .7rem; font-size:var(--t--1); max-width:none; }
 .swap__box p:last-child{ margin:0; }
 
-.faq{ margin:1.75rem 0 0; padding:0; }
-.faq__item{ border-top:1px solid var(--line); padding-block:1.35rem; }
-.faq__q{ font-weight:700; font-size:var(--t-1); letter-spacing:-0.02em; margin:0 0 .5rem; color:var(--text); }
-.faq__a{ margin:0; color:var(--text-2); max-width:68ch; }
+/* Аккордеон на <details>: без скриптов, работает с клавиатуры,
+   ответы остаются в разметке — важно и для поиска, и для нейросетей. */
+.faq{ margin:1.75rem 0 0; padding:0; border-top:1px solid var(--line); }
+.faq__item{ border-bottom:1px solid var(--line); }
+.faq__q{
+  display:flex; align-items:flex-start; justify-content:space-between; gap:1.5rem;
+  list-style:none; cursor:pointer; padding-block:1.35rem;
+  font-weight:700; font-size:var(--t-1); letter-spacing:-0.02em; color:var(--text);
+  transition:color .15s ease;
+}
+.faq__q::-webkit-details-marker{ display:none; }
+.faq__q:hover{ color:var(--accent); }
+.faq__item[open] > .faq__q{ color:var(--accent); }
+
+.faq__sign{
+  flex:none; position:relative; width:1.5rem; height:1.5rem; margin-top:.1rem;
+  border:1px solid var(--line-2); border-radius:50%;
+  transition:border-color .15s ease, transform .25s ease;
+}
+.faq__q:hover .faq__sign,
+.faq__item[open] .faq__sign{ border-color:var(--accent); }
+.faq__item[open] .faq__sign{ transform:rotate(180deg); }
+.faq__sign::before,.faq__sign::after{
+  content:""; position:absolute; top:50%; left:50%;
+  width:.62rem; height:1.5px; border-radius:1px; background:var(--accent);
+  transform:translate(-50%,-50%); transition:opacity .2s ease;
+}
+.faq__sign::after{ transform:translate(-50%,-50%) rotate(90deg); }
+.faq__item[open] .faq__sign::after{ opacity:0; }
+
+.faq__a{ padding-bottom:1.5rem; margin:0; animation:faq-in .2s ease both; }
+.faq__a p{ margin:0; color:var(--text-2); max-width:68ch; }
+@keyframes faq-in{ from{ opacity:0; transform:translateY(-.3rem); } to{ opacity:1; transform:none; } }
+@media (prefers-reduced-motion:reduce){
+  .faq__a{ animation:none; }
+  .faq__sign,.faq__sign::before,.faq__sign::after{ transition:none; }
+}
 
 /* ---------- Каталог услуг ---------- */
 .cat{

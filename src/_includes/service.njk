@@ -52,14 +52,14 @@ layout: base.njk
 {%- if faq %}
 <section class="section section--rule wrap">
   <h2>Частые вопросы</h2>
-  <dl class="faq">
+  <div class="faq">
     {%- for item in faq %}
-    <div class="faq__item">
-      <dt class="faq__q">{{ item.q }}</dt>
-      <dd class="faq__a">{{ item.a }}</dd>
-    </div>
+    <details class="faq__item" name="faq">
+      <summary class="faq__q">{{ item.q }}<span class="faq__sign" aria-hidden="true"></span></summary>
+      <div class="faq__a"><p>{{ item.a }}</p></div>
+    </details>
     {%- endfor %}
-  </dl>
+  </div>
 </section>
 {%- endif %}
 
