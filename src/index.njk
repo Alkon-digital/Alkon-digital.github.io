@@ -4,37 +4,41 @@ title: "Маркетинг для медицинских клиник"
 description: "Агентство «Анамнез» — сайты, продвижение и реклама для медицинских клиник, косметологии и салонов красоты. Считаем дошедших пациентов, а не клики."
 ---
 <section class="hero">
-  <div class="wrap hero__grid">
-    <div>
-      <span class="eyebrow">Медицина, косметология, салоны красоты</span>
-      <h1 class="hero__title">Приводим не заявки,<br>а <em>дошедших пациентов</em></h1>
-      <p class="hero__sub">Сначала находим, где клиника теряет людей между рекламой и креслом. Потом чиним. В таком порядке.</p>
+  <div class="wrap">
+    <div class="hero__grid">
+      <div class="hero__main">
+        <span class="eyebrow">Медицина, косметология, салоны красоты</span>
+        <h1 class="hero__title">Приводим не заявки,<br>а <em>дошедших пациентов</em></h1>
+        <p class="hero__sub">Сначала находим, где клиника теряет людей между рекламой и креслом. Потом чиним. В таком порядке.</p>
 
-      <div class="hero__cta">
-        <a class="btn" href="#intake">Собрать анамнез клиники <span class="btn__dot">→</span></a>
-        <a class="btn btn--ghost" href="/tseny/">Посмотреть цены</a>
+        <div class="hero__cta">
+          <a class="btn" href="#intake">Собрать анамнез клиники <span class="btn__dot">&#8594;</span></a>
+          <a class="btn btn--ghost" href="/tseny/">Посмотреть цены</a>
+        </div>
       </div>
 
-      <ul class="facts">
-        <li><span class="facts__n">Только медицина</span><span class="facts__t">и смежные ниши, без распыления на всё подряд</span></li>
-        <li><span class="facts__n">Дошедшие пациенты</span><span class="facts__t">главный показатель в отчёте, а не клики и заявки</span></li>
-        <li><span class="facts__n">Разбор бесплатно</span><span class="facts__t">2–3 дня, ни к чему не обязывает</span></li>
-      </ul>
-    </div>
+      <div class="hero__side">
+        {%- if heroImage %}
+        <img class="hero__media" src="{{ heroImage }}" alt="{{ heroImageAlt }}" width="1280" height="960" loading="eager" decoding="async">
+        {%- endif %}
 
-    <div class="intake" id="intake" data-intake>
-      <div class="intake__head">
-        <p class="intake__title">Анамнез клиники</p>
-        <p class="intake__count" data-intake-count>Вопрос 1 из 4</p>
-      </div>
-      <div data-intake-body>
-        <noscript>
-          <p class="intake__q">Где теряются ваши пациенты?</p>
-          <p>Разбор занимает пару минут и ничего не стоит. Напишите нам — пройдём по всей цепочке вместе.</p>
-          <a class="btn" href="/kontakty/">Связаться</a>
-        </noscript>
+        {%- if promo.on %}
+        <aside class="promo">
+          <p class="promo__label"><span class="promo__dot" aria-hidden="true"></span>{{ promo.label }}</p>
+          <p class="promo__title">{{ promo.title }}</p>
+          <p class="promo__price">{{ promo.price }}&nbsp;<span>{{ promo.unit }}</span></p>
+          <p class="promo__note">{{ promo.note }}</p>
+          <a class="btn btn--sm" href="/kontakty/">{{ promo.cta }} <span class="btn__dot">&#8594;</span></a>
+        </aside>
+        {%- endif %}
       </div>
     </div>
+
+    <ul class="facts">
+      <li><span class="facts__n">Только медицина</span><span class="facts__t">и смежные ниши, без распыления на всё подряд</span></li>
+      <li><span class="facts__n">Дошедшие пациенты</span><span class="facts__t">главный показатель в отчёте, а не клики и заявки</span></li>
+      <li><span class="facts__n">Разбор бесплатно</span><span class="facts__t">2–3 дня, ни к чему не обязывает</span></li>
+    </ul>
   </div>
 </section>
 
@@ -108,6 +112,26 @@ description: "Агентство «Анамнез» — сайты, продви
 </section>
 
 {% include "partials/funnel.njk" %}
+
+<section class="section section--rule wrap">
+  <h2>Соберём анамнез вашей клиники</h2>
+  <p class="section__lead">Четыре вопроса о том, как у вас устроен путь пациента. В конце скажем, где вероятнее всего теряются люди и что смотреть первым.</p>
+
+  <div class="intake" id="intake" data-intake>
+    <div class="intake__head">
+      <p class="intake__title">Анамнез клиники</p>
+      <p class="intake__count" data-intake-count>Вопрос 1 из 4</p>
+    </div>
+    <div data-intake-body>
+      <noscript>
+        <p class="intake__q">Где теряются ваши пациенты?</p>
+        <p>Разбор занимает пару минут и ничего не стоит. Напишите нам — пройдём по всей цепочке вместе.</p>
+        <a class="btn" href="/kontakty/">Связаться</a>
+      </noscript>
+    </div>
+  </div>
+</section>
+
 
 <section class="section section--rule wrap">
   <span class="eyebrow">Как устроена работа</span>
