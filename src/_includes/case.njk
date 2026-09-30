@@ -1,6 +1,7 @@
 ---
 layout: base.njk
 ---
+{%- from "partials/chart.njk" import chart -%}
 <article>
   <section class="phero phero--plain">
     <div class="wrap phero__in">
@@ -27,7 +28,16 @@ layout: base.njk
   </section>
   {%- endif %}
 
+  {%- if charts %}
   <section class="section section--rule wrap">
+    <h2>{{ chartsTitle | default("В цифрах") }}</h2>
+    {%- for c in charts %}
+    {{ chart(c) }}
+    {%- endfor %}
+  </section>
+  {%- endif %}
+
+  <section class="section section--rule wrap post__body">
     {{ content | safe }}
   </section>
 
@@ -37,3 +47,4 @@ layout: base.njk
     <p><a class="btn" href="/kontakty/">Обсудить задачу</a></p>
   </section>
 </article>
+<script src="/assets/js/charts.js" defer></script>

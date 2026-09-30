@@ -1,0 +1,16 @@
+{%- macro chart(c) -%}
+<figure class="chart" data-chart="{{ c.type | default('line') }}"{% if c.unit %} data-unit="{{ c.unit }}"{% endif %}{% if c.mark %} data-mark="{{ c.mark }}"{% endif %}>
+  <figcaption class="chart__title">{{ c.title }}</figcaption>
+  <div class="chart__canvas" data-chart-canvas></div>
+  <table>
+    <caption>{{ c.title }}</caption>
+    <thead><tr><th scope="col">{{ c.xLabel | default("Период") }}</th><th scope="col">{{ c.yLabel | default("Значение") }}</th></tr></thead>
+    <tbody>
+      {%- for p in c.points %}
+      <tr{% if p.mark %} data-mark{% endif %}><th scope="row">{{ p.x }}</th><td>{{ p.y }}</td></tr>
+      {%- endfor %}
+    </tbody>
+  </table>
+  {%- if c.note %}<p class="chart__note">{{ c.note }}</p>{% endif %}
+</figure>
+{%- endmacro -%}

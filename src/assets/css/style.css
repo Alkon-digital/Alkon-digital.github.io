@@ -434,6 +434,31 @@ li::marker{ color:var(--accent); }
   .faq__sign,.faq__sign::before,.faq__sign::after{ transition:none; }
 }
 
+/* ---------- Графики в кейсах ---------- */
+.chart{ margin:2.25rem 0; }
+.chart__title{ font-size:var(--t-0); font-weight:600; color:var(--text); margin:0 0 1rem; }
+.chart__canvas{ position:relative; }
+.chart__svg{ display:block; width:100%; height:auto; overflow:visible; }
+.chart__tick{ font-size:11px; fill:var(--muted); font-family:var(--f); }
+.chart__cat{ font-size:13px; fill:var(--text-2); font-family:var(--f); }
+.chart__val{ font-size:13px; font-weight:600; fill:var(--accent); font-family:var(--f); font-variant-numeric:tabular-nums; }
+.chart__mark{ font-size:11px; fill:var(--muted); font-family:var(--f); }
+.chart__tip{
+  position:absolute; transform:translate(-50%,-160%); pointer-events:none;
+  background:var(--bg-3); border:1px solid var(--line-2); border-radius:8px;
+  padding:.35rem .6rem; font-size:var(--t--1); color:var(--text); white-space:nowrap;
+}
+.chart__note{ font-size:var(--t--1); color:var(--muted); margin:.9rem 0 0; }
+.chart__table{ margin-top:1rem; }
+.chart__table summary{ cursor:pointer; font-size:var(--t--1); color:var(--text-2); }
+.chart__table summary:hover{ color:var(--accent); }
+.chart__table table{ width:100%; border-collapse:collapse; margin-top:.85rem; font-size:var(--t--1); }
+.chart__table caption{ text-align:left; color:var(--muted); font-size:var(--t--1); margin-bottom:.5rem; }
+.chart__table th,.chart__table td{ text-align:left; padding:.45rem .6rem; border-bottom:1px solid var(--line); }
+.chart__table td{ color:var(--accent); font-variant-numeric:tabular-nums; }
+.chart__table thead th{ color:var(--muted); font-weight:500; }
+/* без JS таблица остаётся видимой сама по себе */
+
 /* ---------- Выделенное направление ---------- */
 .spot{
   display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);
