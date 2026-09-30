@@ -21,3 +21,15 @@ for (const dir of DIRS) {
     console.log(`${dir.split("/").pop()}/${name}`);
   }
 }
+
+// Баннер главной: 4:3, потому что вёрстка держит именно это соотношение.
+// Лежит в корне src/assets/img, а не в папках обложек.
+const ROOT = "src/assets/img";
+for (const f of (await readdir(ROOT)).filter(f => f.endsWith("-src.jpg"))) {
+  const name = f.replace("-src.jpg", "");
+  await sharp(`${ROOT}/${f}`).resize(1280, 960, { fit: "cover", position: "centre" })
+    .webp({ quality: 74 }).toFile(`${ROOT}/${name}.webp`);
+  await sharp(`${ROOT}/${f}`).resize(640, 480, { fit: "cover", position: "centre" })
+    .webp({ quality: 72 }).toFile(`${ROOT}/${name}-sm.webp`);
+  console.log(`img/${name} (4:3)`);
+}
