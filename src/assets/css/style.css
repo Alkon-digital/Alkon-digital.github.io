@@ -448,7 +448,8 @@ li::marker{ color:var(--accent); }
   animation:promo-pulse 2.4s ease-in-out infinite;
 }
 @media (prefers-reduced-motion:reduce){ .spot__dot{ animation:none; } }
-.spot__name{ font-size:var(--t-3); margin:0 0 .6rem; }
+.spot__name{ font-size:var(--t-3); margin:0 0 .6rem; letter-spacing:-0.035em; }
+.spot__rest{ font-size:var(--t-1); color:var(--text-2); margin:2.75rem 0 0; }
 .spot__text{ color:var(--text-2); margin:0 0 1.35rem; max-width:44ch; }
 .spot__links{
   list-style:none; margin:0 0 1.6rem; padding:0;
